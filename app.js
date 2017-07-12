@@ -16,20 +16,19 @@ app.use(bodyParser.urlencoded({
 mongoose.Promise = require('bluebird')
 mongoose.connect('mongodb://localhost:27017/cars')
 
-var car = new Cars({
-  make: 'Lambo',
-  model: 'Aventador',
-  year: 2017,
-  image: 'https://pbs.twimg.com/media/DEB_6GiXoAIFgQs.jpg:large',
-  features: {
-      color: 'black' ,
-      automatic: 'yes'
-  }
-});
-
-console.log(car);
+// var car = new Cars({
+//   make: 'Lambo',
+//   model: 'Aventador',
+//   year: 2017,
+//   image: 'https://pbs.twimg.com/media/DEB_6GiXoAIFgQs.jpg:large',
+//   features: {
+//       color: 'black' ,
+//       automatic: 'yes'
+//   }
+// });
 
 
+// console.log(car);
 
 
 app.get('/', function(request, respond) {
@@ -50,9 +49,20 @@ app.get('/add-collection', function(request, respond){
 })
 
 
+
+app.get('/about-collection', function(request, respond){
+
+  respond.render('about-collection', {
+
+  })
+})
+
+
+
 app.post('/add', function(request, respond) {
 
-  const car = new Cars()
+  const car = new Cars();
+
   car.make = request.body.make
   car.model = request.body.model
   car.year = request.body.year
@@ -60,17 +70,16 @@ app.post('/add', function(request, respond) {
 
   car.save().then(function(car){
 
-    console.log(car)
+    // console.log(car)
 
-respond.redirect('/home-collection')
+respond.redirect('/')
 
   }).catch(function(cars) {
-    respond.render('home-collection', {
-      cars: cars,
+    respond.render('/', {
+      cars: cars
     })
      })
   })
-
 
 
 

@@ -7,8 +7,8 @@ const carSchema = new mongoose.Schema({
     doors: {type: Number},
     image: {type: String},
     features: {
-        color: { type: String, required: true },
-        automatic: {type: String, required: true}
+        color: { type: String, },
+        automatic: {type: String,}
     }
 })
 
