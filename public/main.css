@@ -50,8 +50,16 @@ form{
 
 .details{
 
+
 }
 
+button{
+  background-color: #262626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
 
 .input-field {
   width: 50%;
@@ -61,11 +69,17 @@ form{
 }
 
 .car-img{
-  width: 20em;
+  width: 40%;
   height: 20em;
 
 }
 
 .btn{
   margin-left: 25%;
+  background-color: #262626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
 }

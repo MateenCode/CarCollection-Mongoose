@@ -25,18 +25,21 @@
 
   <img class="car-img"src="{{image}}" alt="">
 
-  <h3>Details:</h3>
-  <p>{{make}}</p>
-  <p>{{model}}<p>
-  <p>{{year}}</p>
 
-  <!-- <form class="" action="/delete" method="post">
-
-        <button type="submit" name="id" value="{{_id}}">Delete</button>
-
-      </form> -->
+  <form class="" action="/delete" method="post">
+<button name="id" value="{{_id}}">Remove Car</button>
+</form>
 
   <div>
+
+    <div class="details">
+
+      <h3>Details:</h3>
+      <p>{{make}}</p>
+      <p>{{model}}<p>
+      <p>{{year}}</p>
+
+    </div>
 
 {{/cars}}
 

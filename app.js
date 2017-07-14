@@ -81,6 +81,17 @@ respond.redirect('/')
      })
   })
 
+  app.post("/delete", function(req, res){
+    Cars.deleteOne({
+      '_id': req.body.id
+    }).then(function(cars){
+      res.redirect('/')
+    }).catch(function(err){
+      throw err
+    })
+
+  })
+
 
 
 
